@@ -48,7 +48,9 @@ function SelectActionCard() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        p: 3,
+        p: {
+          sm:3
+        }
       }}
     >
       <Box
@@ -66,7 +68,9 @@ function SelectActionCard() {
           sx={{
             
             borderRadius: 2,
-            p: 4,
+            p: {
+          sm:4
+        },
             minHeight: 200,
             display: "flex",
             flexDirection: "column",

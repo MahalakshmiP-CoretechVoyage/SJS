@@ -256,13 +256,16 @@ function CorporateRental() {
             <Box
                 sx={{
                     position: "relative",
-                    backgroundImage: `url(${corporateRental})`,
+                    backgroundImage: {
+                      sm:`url(${corporateRental})`,
+                       xs: "none",
+                    },
                     backgroundRepeat: "no-repeat",
                      backgroundPosition: "top right",
                      top:"150px",
                     backgroundSize: "contain",
                     height: { xs: "400px", sm: "500px", md: "300px" },
-                    p: { xs: 3, sm: 5, md:10},
+                    p: {sm: 5, md:10},
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "flex-start",
@@ -277,11 +280,10 @@ function CorporateRental() {
                             sx={{
                                 maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "740px" },
                                 wordWrap: "break-word",
-                                lineHeight: 1.4,
-                                fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.25rem", lg: "2.5rem" }, // smaller font for mobile
-                                textAlign: { xs: "center", sm: "left" }, 
+                                lineHeight: 1.2,
                                 mx: { xs: "auto", sm: 0 }, 
-                                mt:"-170px"
+                                mt:"-170px",
+                                p:0
 
                             }}
                         >
@@ -295,12 +297,10 @@ function CorporateRental() {
                                 // width: "100%",
                                 maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "550px" },
                                 wordWrap: "break-word",
-                                lineHeight: 1.6,
+                                lineHeight: 1.2,
                                 color: "#343434",
-                               
-                                textAlign: { xs: "center", sm: "left" },
                                 mx: { xs: "auto", sm: 0 },
-                                 mt:"-40px"
+                                 mt:{sm:"-50px"}
                             }}
                         >
                              From daily office commutes to long-distance business trips,{' '}
@@ -331,9 +331,9 @@ function CorporateRental() {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        px: { xs: 2, sm: 3, md: 15 },
-                        py: { xs: 4, sm: 6, md: 20 },
-                       
+                        px: { sm: 3, md: 15 },
+                        py: { xs: 10, sm: 6, md: 20 },
+                       top:{xs:'-70px'}
                        
                     }}
                 >

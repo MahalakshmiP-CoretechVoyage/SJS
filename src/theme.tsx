@@ -1,106 +1,105 @@
 import { createTheme } from '@mui/material/styles';
 import "@fontsource/poppins";
-import "@fontsource/montserrat"; // added since you use Montserrat for h3/h4
+import "@fontsource/montserrat";
 
 const theme = createTheme({
   palette: {
     mode: 'light',
-    primary: {
-      main: "#F9FBFF",
-      light: "#ffffff",
-    },
-    blue: {
-      main: "#4169E1",
-      light: "#D5E0FF",
-      lighter: "#EAEFFF",
-      dark: "rgb(0, 123, 85)",
-      darker: "rgb(0, 171, 85)",
-    },
-    yellow: {
-      main: "#FEA602",
-      light: "#E9DA04",
-    },
-    green: {
-      main: "#149700",
-      dark: "#009F25",
-    },
-    secondary: {
-      main: '#333333',
-      light: "#6E6D6D",
-    },
-    success: {
-      main: "#0D9900",
-    },
-    error: {
-      main: '#FF3B3B',
-    },
-    background: {
-      default: '#fafafa',
-      paper: '#ffffff',
-    },
-    text: {
-      primary: '#000000',
-      secondary: '#ffffff',
-    },
+    primary: { main: "#F9FBFF", light: "#ffffff" },
+    blue: { main: "#4169E1", light: "#D5E0FF", lighter: "#EAEFFF", dark: "rgb(0, 123, 85)", darker: "rgb(0, 171, 85)" },
+    yellow: { main: "#FEA602", light: "#E9DA04" },
+    green: { main: "#149700", dark: "#009F25" },
+    secondary: { main: '#333333', light: "#6E6D6D" },
+    success: { main: "#0D9900" },
+    error: { main: '#FF3B3B' },
+    background: { default: '#fafafa', paper: '#ffffff' },
+    text: { primary: '#000000', secondary: '#ffffff' },
   },
 
   typography: {
     h1: {
-      fontSize: '36px',
+      fontFamily: "Poppins",
       fontWeight: 500,
       lineHeight: "54px",
-      fontFamily: "Poppins",
+      fontSize: "28px",
+      '@media (min-width:600px)': { fontSize: '32px' },
+      '@media (min-width:900px)': { fontSize: '36px' },
+      '@media (min-width:1200px)': { fontSize: '42px' },
+      '@media (min-width:1536px)': { fontSize: '48px' },
     },
     h2: {
-      fontSize: '14px',
+      fontFamily: "Poppins",
       fontWeight: 300,
-      lineHeight: '18px',
-      fontFamily: 'Poppins',
-      wordWrap: 'break-word',
+      lineHeight: "18px",
+      fontSize: "12px",
+      '@media (min-width:600px)': { fontSize: '14px' },
+      '@media (min-width:900px)': { fontSize: '16px' },
+      '@media (min-width:1200px)': { fontSize: '13px' },
+      '@media (min-width:1536px)': { fontSize: '20px' },
     },
     h3: {
-      fontSize: '36px',
+      fontFamily: "Montserrat",
       fontWeight: 600,
       lineHeight: "30px",
-      fontFamily: "Montserrat",
+      fontSize: "24px",
+      '@media (min-width:600px)': { fontSize: '28px' },
+      '@media (min-width:900px)': { fontSize: '32px' },
+      '@media (min-width:1200px)': { fontSize: '36px' },
+      '@media (min-width:1536px)': { fontSize: '40px' },
     },
     h4: {
-      fontSize: '40px',
+      fontFamily: "Montserrat",
       fontWeight: 600,
       lineHeight: "25px",
-      fontFamily: "Montserrat",
+      fontSize: "26px",
+      '@media (min-width:600px)': { fontSize: '30px' },
+      '@media (min-width:900px)': { fontSize: '34px' },
+      '@media (min-width:1200px)': { fontSize: '40px' },
+      '@media (min-width:1536px)': { fontSize: '44px' },
     },
     h5: {
-      fontSize: '20px',
+      fontFamily: "Poppins",
       fontWeight: 500,
       lineHeight: "20px",
-      fontFamily: "Poppins",
+      fontSize: "16px",
+      '@media (min-width:600px)': { fontSize: '18px' },
+      '@media (min-width:900px)': { fontSize: '20px' },
+      '@media (min-width:1200px)': { fontSize: '15px' },
+      '@media (min-width:1536px)': { fontSize: '24px' },
     },
     h6: {
-      fontSize: "20px",
+      fontFamily: "Poppins",
       fontWeight: 600,
       lineHeight: "20px",
-      fontFamily: "Poppins",
+      fontSize: "16px",
+      '@media (min-width:600px)': { fontSize: '18px' },
+      '@media (min-width:900px)': { fontSize: '20px' },
+      '@media (min-width:1200px)': { fontSize: '22px' },
+      '@media (min-width:1536px)': { fontSize: '24px' },
     },
     body1: {
-      fontSize: '20px',
+      fontFamily: "Poppins",
       fontWeight: 300,
       lineHeight: "22.5px",
-      fontFamily: "Poppins",
+      fontSize: "14px",
+      '@media (min-width:600px)': { fontSize: '16px' },
+      '@media (min-width:900px)': { fontSize: '18px' },
+      '@media (min-width:1200px)': { fontSize: '20px' },
+      '@media (min-width:1536px)': { fontSize: '22px' },
     },
     body2: {
-      fontSize: '18px',
+      fontFamily: "Poppins",
       fontWeight: 300,
       lineHeight: "21px",
-      fontFamily: "Poppins",
+      fontSize: "12px",
+      '@media (min-width:600px)': { fontSize: '14px' },
+      '@media (min-width:900px)': { fontSize: '16px' },
+      '@media (min-width:1200px)': { fontSize: '16px' },
+      '@media (min-width:1536px)': { fontSize: '20px' },
     },
- 
   },
-  
 
-  shape: {
-    borderRadius: 8,
-  },
+  shape: { borderRadius: 8 },
 
   components: {
     MuiButton: {
@@ -111,11 +110,13 @@ const theme = createTheme({
         }),
       },
     },
-   
   },
 });
 
 export default theme;
+
+
+
 
 
 

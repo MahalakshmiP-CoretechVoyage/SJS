@@ -11,14 +11,15 @@ function AboutUs() {
             <Box
                 sx={{
                     mb: 4,
-                    p: 7
+                    
+                    p:{sm:7}
                 }}
             >
                 <Typography
                     variant="h4"
                     sx={{
                         maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "800px" },
-                        lineHeight: 1.5,
+                        lineHeight: 1.2,
                     }}
                 >
                     Redefining Everyday Travel with Safety, Comfort, and Reliability
@@ -32,8 +33,10 @@ function AboutUs() {
                         minHeight: "600px",
                         display: "flex",
                         flexDirection: "column",
-                        p: 7,
-                        top: "-130px",
+                        p:{sm:7},
+                        top: {
+                           sm: "-130px",
+                        },
                         overflow: "hidden", // ensures overlay stays inside
                     }}
                 >
@@ -98,7 +101,7 @@ function AboutUs() {
                     </Box>
                 </Box>
 
-                <Box sx={{ mt: '-175px', width: '100%' }}>
+                <Box sx={{ mt: '-100px', width: '100%' }}>
                     <TourPopupDialog />
                 </Box>
 

@@ -11,7 +11,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   const buttons = [
-    { label: "Home", path: "/home" },
+    { label: "Home", path: "/" },
     { label: "Tours", path: "/tours" },
     { label: "Corporate Rentals", path: "/corporaterental" },
     { label: "About Us", path: "/aboutus" },
@@ -120,7 +120,7 @@ export default function Header() {
       </Drawer>
 
       {/* Page Content */}
-      <Box sx={{ px: { xs: 2, sm: 4 }, py: { xs: 1, sm: 2 } }}>
+      <Box>
         <Outlet />
       </Box>
     </>

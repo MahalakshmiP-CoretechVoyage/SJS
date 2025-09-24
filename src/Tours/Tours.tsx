@@ -7,7 +7,6 @@ import ToursCard2 from "../assets/ToursCard2.png"
 import ToursCard3 from "../assets/ToursCard3.png"
 import ToursCard4 from "../assets/ToursCard4.png"
 import ContactUs from '../pages/ContactUs'
-import PopupDialog from '../popupDialog/popupDialog'
 import Footer from '../Footer/Footer'
 import TourPopupDialog from '../popupDialog/TourPopupDialog'
 
@@ -17,15 +16,17 @@ function Tours() {
       <Box
         sx={{
           position: "relative",
-          backgroundImage: `url(${tours})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top right",
           backgroundSize: "contain",
-          height: { xs: "400px", sm: "500px", md: "200px" },
-          p: { xs: 3, sm: 5, md: 10 },
+          p: { sm: 5, md: 10 },
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
+           backgroundImage: {
+            xs: "none",
+            sm: `url(${tours})`,
+          },
         }}
       >
         <Grid container justifyContent="flex-start">
@@ -33,12 +34,10 @@ function Tours() {
             <Typography
               variant="h4"
               sx={{
-                maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "740px" },
+                maxWidth: {  md: "600px", lg: "740px" },
                 wordWrap: "break-word",
-                lineHeight: 1.4,
-                fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.25rem", lg: "2.5rem" }, // smaller font for mobile
-                textAlign: { xs: "center", sm: "left" }, // center on mobile
-                mx: { xs: "auto", sm: 0 }, // center block horizontally on mobile
+                lineHeight: 1.2,
+                mx: { xs: "auto", sm: 0 }, 
               }}
             >
               Explore. Experience. Enjoy Memorable Tours with SJS Travels
@@ -57,7 +56,6 @@ function Tours() {
                 lineHeight: 1.6,
                 color: "#343434",
                 mt: 2,
-                textAlign: { xs: "center", sm: "left" },
                 mx: { xs: "auto", sm: 0 },
               }}
             >
@@ -126,13 +124,6 @@ function Tours() {
             sx={{
               color: "#343434",
               mb: 3,
-              fontSize: {
-                xs: "0.9rem",
-                sm: "1rem",
-                md: "1.05rem",
-                lg: "1.1rem",
-                xl: "1.15rem",
-              },
               lineHeight: 1.5,
               textAlign: "center",
               maxWidth: "850px",
@@ -199,7 +190,7 @@ function Tours() {
                       variant="h5"
                       sx={{
                         mt: 2,
-                        fontSize: { xs: "1rem", sm: "1.1rem", md: "1rem" },
+                       
                       }}
                     >
                       {titles[index]}
@@ -208,7 +199,7 @@ function Tours() {
                       variant="body2"
                       sx={{
                         mt: 1,
-                        fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
+                       
                         display: "-webkit-box",
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: "vertical",
@@ -261,7 +252,9 @@ function Tours() {
             variant="h4"
             sx={{
               maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "900px" },
-              lineHeight: 1.5,
+              lineHeight: {
+                sm:1.5,
+              },
               mb: 2,
             }}
           >
@@ -272,7 +265,6 @@ function Tours() {
             variant="body1"
             sx={{
               color: "#343434",
-              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.05rem", lg: "1.1rem" },
               lineHeight: 1.5,
               maxWidth: "850px",
             }}
@@ -286,7 +278,7 @@ function Tours() {
         <TourPopupDialog />
       </Box>
 
-      <Box sx={{ mt: '-80px', width: '100%' }}>
+      <Box sx={{ mt: '-290px', width: '100%' }}>
         <Footer />
       </Box>
 

@@ -18,7 +18,7 @@ export interface AppRoute {
 
 export const protectedRoutes: AppRoute[] = [
   { path: "/header", element: < Header /> },
-  { path: '/home', element: <HomePage /> },
+  { path: '/', element: <HomePage /> },
   { path: '/tours', element: <Tours /> },
   { path: '/corporaterental', element: <CorporateRental /> },
   { path: '/vehicles', element: <Vehicles/> },
