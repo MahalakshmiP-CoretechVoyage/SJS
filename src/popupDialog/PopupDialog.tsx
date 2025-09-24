@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Grid, Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
 import popupImageDesktop from "../assets/popupImage.png";
 import popupImageMobile from "../assets/PopupImageMobile.png";
 import popup1 from "../assets/popup1.png";
@@ -53,12 +53,12 @@ function PopupDialog() {
     if (!popupSectionVisible || isMobile) return; // Skip popups on mobile
 
     const timers = [
-      setTimeout(() => setVisiblePopups(v => ({ ...v, popup1: true })), 1000),
-      setTimeout(() => setVisiblePopups(v => ({ ...v, popup2: true })), 2000),
-      setTimeout(() => setVisiblePopups(v => ({ ...v, popup3: true })), 3000),
-      setTimeout(() => setVisiblePopups(v => ({ ...v, popup4: true })), 4000),
+      setTimeout(() => setVisiblePopups((v) => ({ ...v, popup1: true })), 1000),
+      setTimeout(() => setVisiblePopups((v) => ({ ...v, popup2: true })), 2000),
+      setTimeout(() => setVisiblePopups((v) => ({ ...v, popup3: true })), 3000),
+      setTimeout(() => setVisiblePopups((v) => ({ ...v, popup4: true })), 4000),
     ];
-    return () => timers.forEach(t => clearTimeout(t));
+    return () => timers.forEach((t) => clearTimeout(t));
   }, [popupSectionVisible, isMobile]);
 
   // Typing effect
@@ -88,18 +88,20 @@ function PopupDialog() {
           width: "100%",
           height: { xs: 300, sm: 600 },
           borderRadius: 2,
-          backgroundImage: `url(${isMobile ? popupImageMobile : popupImageDesktop})`,
+          backgroundImage: `url(${
+            isMobile ? popupImageMobile : popupImageDesktop
+          })`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           position: "relative",
-            // top: { xs: "10px", sm: "20px", md: "100px", lg: "120px" },
-            top:{
-              md:"-170px",
-              xs: "10px",
-               sm: "20px",
-               lg: "-120px"
-            }
+          // top: { xs: "10px", sm: "20px", md: "100px", lg: "120px" },
+          top: {
+            md: "-170px",
+            xs: "10px",
+            sm: "20px",
+            lg: "-60px",
+          },
         }}
       >
         {!isMobile && (
@@ -127,7 +129,12 @@ function PopupDialog() {
                 <Typography variant="h2" align="center" sx={{ mb: 4 }}>
                   {popup1Text}
                   {popup1Text.length === fullPopup1Text.length && (
-                    <Icon icon="tdesign:location-filled" width={16} height={17} style={{ color: "red" }} />
+                    <Icon
+                      icon="tdesign:location-filled"
+                      width={16}
+                      height={17}
+                      style={{ color: "red" }}
+                    />
                   )}
                 </Typography>
               </Box>
@@ -154,10 +161,18 @@ function PopupDialog() {
                   textAlign: "center",
                 }}
               >
-                <Typography variant="h2" align="center" sx={{ ml: 5, mr: 5, mb: 2 }}>
+                <Typography
+                  variant="h2"
+                  align="center"
+                  sx={{ ml: 5, mr: 5, mb: 2 }}
+                >
                   {popup2Text}
                   {popup2Text.length === fullPopup2Text.length && (
-                    <Icon icon="streamline-ultimate-color:car-4" width={16} height={17} />
+                    <Icon
+                      icon="streamline-ultimate-color:car-4"
+                      width={16}
+                      height={17}
+                    />
                   )}
                 </Typography>
               </Box>
@@ -184,7 +199,9 @@ function PopupDialog() {
                   textAlign: "center",
                 }}
               >
-                <Typography variant="h2" sx={{ mb: 2 }} align="center">{popup3Text}</Typography>
+                <Typography variant="h2" sx={{ mb: 2 }} align="center">
+                  {popup3Text}
+                </Typography>
               </Box>
             )}
 
@@ -209,7 +226,9 @@ function PopupDialog() {
                   textAlign: "center",
                 }}
               >
-                <Typography variant="h2" sx={{ mb: 5 }} align="center">{popup4Text}</Typography>
+                <Typography variant="h2" sx={{ mb: 5 }} align="center">
+                  {popup4Text}
+                </Typography>
               </Box>
             )}
           </>

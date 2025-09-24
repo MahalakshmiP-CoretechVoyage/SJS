@@ -1,22 +1,21 @@
 import React from "react";
 import { Box, Grid, Typography, Stack } from "@mui/material";
 import ContactUs from "../pages/ContactUs";
-import rectange from "../assets/Rectangle .png"
-import cardImage1 from "../assets/cardImage1.png"
-import cardImage2 from "../assets/cardImage2.png"
-import cardImage3 from "../assets/cardImage3.png"
-import cardImage4 from "../assets/cardImage4.png"
-import WhyChooseUs from "../assets/WhyChooseUs.png"
-import { Icon } from '@iconify/react';
+import rectange from "../assets/Rectangle .png";
+import cardImage1 from "../assets/cardImage1.png";
+import cardImage2 from "../assets/cardImage2.png";
+import cardImage3 from "../assets/cardImage3.png";
+import cardImage4 from "../assets/cardImage4.png";
+import WhyChooseUs from "../assets/WhyChooseUs.png";
+import { Icon } from "@iconify/react";
 import { useEffect, useState, useRef } from "react";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import skodaImage from "../assets/skodaImage.png"
-import Vector from "../assets/Vector.png"
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import skodaImage from "../assets/skodaImage.png";
+import Vector from "../assets/Vector.png";
 import Footer from "../Footer/Footer";
 import PopupDialog from "../popupDialog/popupDialog";
-
 
 function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,8 +27,6 @@ function HomePage() {
   });
   const popupSectionRef = useRef(null);
   const [popupSectionVisible, setPopupSectionVisible] = useState(false);
-
-
 
   const texts = [
     { label: "Modern Corporate Workforces", color: "#57BAE5" },
@@ -43,7 +40,6 @@ function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-
   useEffect(() => {
     if (!popupSectionVisible) return;
 
@@ -54,10 +50,8 @@ function HomePage() {
       setTimeout(() => setVisiblePopups((v) => ({ ...v, popup4: true })), 4000),
     ];
 
-    return () => timers.forEach(t => clearTimeout(t));
+    return () => timers.forEach((t) => clearTimeout(t));
   }, [popupSectionVisible]);
-
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -77,70 +71,66 @@ function HomePage() {
     return () => observer.disconnect();
   }, []);
 
-
   return (
     <>
-      <Grid container sx={{ p: { sm: 4, md: 10 } }}> {/* smaller padding on mobile */}
+      <Box sx={{ p: { sm: 10 } }}>
+        <Typography
+          variant="h4"
+          sx={{
+            maxWidth: { xs: "100%", sm: "500px", md: "900px", lg: "900px" },
+            lineHeight: {
+              sm: 1.5,
+            },
+            pt: { xs: 5, sm: 0 },
+          }}
+        >
+          The Nationwide All-In-One Ground Transportation Solution for
+        </Typography>
 
-        <Grid container justifyContent="flex-start">
-
+        {/* color text */}
+        <Box
+          sx={{
+            maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "700px" },
+            mt: { xs: 1, sm: 4, md: 2 },
+          }}
+        >
           <Typography
             variant="h4"
             sx={{
-              maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "800px" },
-              lineHeight:{
-                sm: 1.5,
-              }
-            }}
-          >
-            The Nationwide All-In-One Ground Transportation Solution for
-          </Typography>
-
-
-          {/* color text */}
-          <Box
-            sx={{
-              maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "700px" },
-              mt: { xs: 1, sm: 4, md: 2 },
-            }}
-          >
-            <Typography
-              variant="h4"
-              sx={{
-                wordWrap: "break-word",
-                lineHeight: 1.4,
-                color: texts[currentIndex].color,
-                transition: "opacity 0.5s ease, transform 0.5s ease",
-                opacity: 1,
-                transform: "translateY(0px)",
-                textAlign: "left",
-              }}
-            >
-              {texts[currentIndex].label}
-            </Typography>
-          </Box>
-
-
-          <Typography
-            variant="body1"
-            sx={{
-              width: "100%",
-              maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "900px" },
               wordWrap: "break-word",
-              lineHeight: 1.6,
-              color: "#343434",
-              mt: 2,
-              textAlign: { xs: "left", sm: "left" },
-              mx: { xs: "auto", sm: 0 },
+              lineHeight: 1.4,
+              color: texts[currentIndex].color,
+              transition: "opacity 0.5s ease, transform 0.5s ease",
+              opacity: 1,
+              transform: "translateY(0px)",
+              textAlign: "left",
             }}
           >
-            We partner with IT and software companies to simplify employee commutes. From office to home and home to office, we ensure every ride is safe, reliable, and on time. With GPS tracking, verified drivers, and 24/7 support, your teams travel with complete peace of mind.
+            {texts[currentIndex].label}
           </Typography>
+        </Box>
 
-        </Grid>
+        <Typography
+          variant="body1"
+          sx={{
+            width: "100%",
+            maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "900px" },
+            wordWrap: "break-word",
+            lineHeight: 1.6,
+            color: "#343434",
+            mt: 2,
+            textAlign: { xs: "left", sm: "left" },
+            mx: { xs: "auto", sm: 0 },
+          }}
+        >
+          We partner with IT and software companies to simplify employee
+          commutes. From office to home and home to office, we ensure every ride
+          is safe, reliable, and on time. With GPS tracking, verified drivers,
+          and 24/7 support, your teams travel with complete peace of mind.
+        </Typography>
 
         <ContactUs />
-      </Grid>
+      </Box>
 
       <Box>
         <PopupDialog />
@@ -161,22 +151,18 @@ function HomePage() {
           py: { xs: 4, sm: 6, md: 8 },
           top: {
             md: "-150px",
-            lg: "-195px"
-
-          }
-
-
+            lg: "-120px",
+          },
         }}
       >
         {/* Title */}
         <Typography
           variant="h4"
           sx={{
-            maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "700px" },
+            maxWidth: { xs: "100%", sm: "500px", md: "900px", lg: "1500px" },
             wordWrap: "break-word",
             lineHeight: 1.5,
             mt: 5,
-
           }}
         >
           Why Choose SJS Safe Travels
@@ -190,22 +176,21 @@ function HomePage() {
             mb: 3,
             lineHeight: 1.5,
             textAlign: "center",
-            maxWidth: "1000px",
-            mt: 3
+            maxWidth: { xs: "100%", sm: "500px", md: "900px", lg: "1100px" },
+            mt: 3,
           }}
         >
-          At{' '}
-         
+          At{" "}
           <Box component="span" sx={{ fontWeight: 600 }}>
             SJS Travels,
-          </Box>{' '}
-          we go beyond just rides — we deliver safe, reliable, and
-          hassle-free transportation solutions designed especially for IT and
-          software professionals. With verified drivers, GPS-enabled tracking, and
-          24/7 support, we ensure your employees commute with complete peace of
-          mind. Our modern, well-maintained fleet offers comfort and punctuality,
-          while our tech-enabled operations make scheduling and monitoring seamless
-          for companies.
+          </Box>{" "}
+          we go beyond just rides — we deliver safe, reliable, and hassle-free
+          transportation solutions designed especially for IT and software
+          professionals. With verified drivers, GPS-enabled tracking, and 24/7
+          support, we ensure your employees commute with complete peace of mind.
+          Our modern, well-maintained fleet offers comfort and punctuality,
+          while our tech-enabled operations make scheduling and monitoring
+          seamless for companies.
         </Typography>
 
         {/* Contact Button */}
@@ -217,8 +202,7 @@ function HomePage() {
         <Typography
           variant="body1"
           align="center"
-          sx={{ color: "#515151", mb: 4, lineHeight: 1.5, }}
-
+          sx={{ color: "#515151", mb: 4, lineHeight: 1.5 }}
         >
           Trusted by Partners Nationwide
         </Typography>
@@ -257,7 +241,6 @@ function HomePage() {
                 sx={{
                   color: "#898989",
                   flexShrink: 0,
-                  fontSize: { xs: "0.7rem", sm: "0.85rem", md: "1rem", lg: "1.1rem" },
                 }}
               >
                 {item}
@@ -280,7 +263,6 @@ function HomePage() {
                 sx={{
                   color: "#898989",
                   flexShrink: 0,
-                  fontSize: { xs: "0.7rem", sm: "0.85rem", md: "1rem", lg: "1.1rem" },
                 }}
               >
                 {item}
@@ -299,9 +281,6 @@ function HomePage() {
         </Grid>
       </Box>
 
-
-
-
       <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
         <Box
           sx={{
@@ -315,9 +294,10 @@ function HomePage() {
             flexDirection: "column",
             alignItems: "flex-start",
             top: {
-              md: '-199px',
-              xs: '-5px'
-            }
+              md: "-199px",
+              xs: "-5px",
+              lg: "-100px",
+            },
           }}
         >
           {/* Title */}
@@ -328,7 +308,6 @@ function HomePage() {
               wordWrap: "break-word",
               lineHeight: 1.5,
               mb: 3,
-
             }}
           >
             Why Choose Us
@@ -339,17 +318,17 @@ function HomePage() {
             variant="body1"
             sx={{
               width: "100%",
-              maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "980px" },
+              maxWidth: { xs: "100%", sm: "500px", md: "600px", lg: "1050px" },
               wordWrap: "break-word",
               lineHeight: 1.5,
               mb: 5,
             }}
           >
             We provide safe, comfortable, and punctual transportation for IT
-            professionals. Partnering with companies, we ensure your team gets from
-            office to home—and back—without hassle. With real-time tracking,
-            professional drivers, and flexible scheduling, we make daily commutes
-            stress-free.
+            professionals. Partnering with companies, we ensure your team gets
+            from office to home—and back—without hassle. With real-time
+            tracking, professional drivers, and flexible scheduling, we make
+            daily commutes stress-free.
           </Typography>
 
           {/* Cards Container */}
@@ -362,59 +341,61 @@ function HomePage() {
               width: "100%",
             }}
           >
-            {[cardImage1, cardImage2, cardImage3, cardImage4].map((img, index) => {
-              const titles = [
-                "Door-to-Door Pickup",
-                "Flexible Timings",
-                "Professional Drivers",
-                "Corporate Partnerships",
-              ];
-              const bodies = [
-                "No more walking long distances—your ride comes to you",
-                "Tailored schedules to match your office shifts.",
-                "Trained, verified, and courteous drivers",
-                "No more walking long distances—your ride comes to you",
-              ];
-              const bgColors = ["#F3F2F9", "#F2F9F4", "#EFF5FF", "#F9F2F2"];
+            {[cardImage1, cardImage2, cardImage3, cardImage4].map(
+              (img, index) => {
+                const titles = [
+                  "Door-to-Door Pickup",
+                  "Flexible Timings",
+                  "Professional Drivers",
+                  "Corporate Partnerships",
+                ];
+                const bodies = [
+                  "No more walking long distances—your ride comes to you",
+                  "Tailored schedules to match your office shifts.",
+                  "Trained, verified, and courteous drivers",
+                  "No more walking long distances—your ride comes to you",
+                ];
+                const bgColors = ["#F3F2F9", "#F2F9F4", "#EFF5FF", "#F9F2F2"];
 
-              return (
-                <Card
-                  key={index}
-                  sx={{
-                    bgcolor: bgColors[index],
-                    borderRadius: 2,
-                    boxShadow: "none",
-                    flex: { xs: "1 1 100%", sm: "1 1 45%", md: "1 1 220px" },
-                    maxWidth: { xs: "100%", sm: "45%", md: 230 },
-                    p: 2,
-                    mb: { xs: 3, sm: 0 },
-
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    image={img}
-                    alt={titles[index]}
-                    sx={{ width: "100%", height: "auto", borderRadius: "16px", mt: 2 }}
-                  />
-                  <CardContent>
-                    <Typography variant="h5" sx={{ mt: 2 }}>
-                      {titles[index]}
-                    </Typography>
-                    <Typography variant="body2" sx={{ mt: 1 }}>
-                      {bodies[index]}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                return (
+                  <Card
+                    key={index}
+                    sx={{
+                      bgcolor: bgColors[index],
+                      borderRadius: 2,
+                      boxShadow: "none",
+                      flex: { xs: "1 1 100%", sm: "1 1 100%", md: "1 1 220px" },
+                      maxWidth: { xs: "100%", sm: "100%", md: "100%" },
+                      p: 2,
+                      mb: { xs: 3, sm: 0 },
+                    }}
+                  >
+                    <CardMedia
+                      component="img"
+                      image={img}
+                      alt={titles[index]}
+                      sx={{
+                        width: "100%",
+                        height: "auto",
+                        borderRadius: "16px",
+                        mt: 2,
+                      }}
+                    />
+                    <CardContent>
+                      <Typography variant="h5" sx={{ mt: 2 }}>
+                        {titles[index]}
+                      </Typography>
+                      <Typography variant="body2" sx={{ mt: 1 }}>
+                        {bodies[index]}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                );
+              }
+            )}
           </Box>
         </Box>
       </Grid>
-
-
-
-
 
       <Card
         sx={{
@@ -423,11 +404,9 @@ function HomePage() {
           borderRadius: "20px",
           backgroundColor: "#F3F2F9",
           boxShadow: "none",
-          maxWidth: { xs: "95%", sm: 1100 },
+          maxWidth: { xs: "95%", sm: "90%" },
           mx: "auto",
           overflow: "hidden",
-          
-
         }}
       >
         {/* Left Section (Text) */}
@@ -438,31 +417,27 @@ function HomePage() {
             flex: 1,
             p: { xs: 2, sm: 3 },
             justifyContent: "center",
-            textAlign: { xs: "center", sm: "left" },
-            
+            // textAlign: { xs: "center", sm: "left" },
           }}
         >
           <CardContent sx={{ p: 0 }}>
-            <Typography
-              variant="h4"
-              gutterBottom
-            
-            >
+            <Typography variant="h4" gutterBottom>
               Home To Work
             </Typography>
             <Typography
-              variant="body2"
+              variant="body1"
               sx={{
                 // height: "100px",
                 // width: "480px",
                 border: "1px solid #C6C6C6",
                 borderRadius: "6px",
                 p: 3,
-                mt:4
-                
+                mt: 4,
               }}
             >
-              At SJS Travels, we make everyday commutes seamless for IT and software employees. With on-time pickups, verified drivers, and GPS-enabled rides, your journey is always safe and reliable.
+              At SJS Travels, we make everyday commutes seamless for IT and
+              software employees. With on-time pickups, verified drivers, and
+              GPS-enabled rides, your journey is always safe and reliable.
             </Typography>
           </CardContent>
         </Box>
@@ -473,17 +448,18 @@ function HomePage() {
           image={skodaImage}
           alt="Skoda Car"
           sx={{
-            width: { xs: "100%", sm: "500px" }, 
+            width: { xs: "100%", sm: "500px" },
             height: { xs: "auto", sm: "100%" },
             objectFit: "cover",
-            borderRadius: { xs: "20px 20px 20px 20px", sm: "20px 20px 20px 20px" }, // rounded corners
+            borderRadius: {
+              xs: "20px 20px 20px 20px",
+              sm: "20px 20px 20px 20px",
+            }, // rounded corners
             flexShrink: 0,
             mt: { xs: 2, sm: 0 }, // spacing on stacked layout
           }}
         />
       </Card>
-
-
 
       <Box
         sx={{
@@ -496,10 +472,7 @@ function HomePage() {
           flexDirection: "column",
           alignItems: "flex-start",
           backgroundSize: "40% auto",
-
         }}
-
-
       >
         {/* Content with zIndex above background */}
         <Box sx={{ position: "relative", zIndex: 1, mt: 4 }}>
@@ -511,7 +484,6 @@ function HomePage() {
               mb: 2,
               lineHeight: 1.3,
               maxWidth: { xs: "100%", md: "600px" },
-
             }}
           >
             Don’t take our word for it, see what our client say
@@ -519,12 +491,11 @@ function HomePage() {
 
           {/* Paragraph */}
           <Typography
-            variant="body2"
+            variant="body1"
             sx={{
               lineHeight: 1.6,
               mb: 9,
               maxWidth: { xs: "100%", md: "850px" },
-
             }}
           >
             At&nbsp;
@@ -549,7 +520,7 @@ function HomePage() {
             {/* First Box */}
             <Box
               sx={{
-                flex: { xs: "1 1 100%", md: "0 0 500px" },
+                flex: { xs: "1 1 100%", md: "0 0 46%" },
                 backgroundColor: "#F3F2F9",
                 borderRadius: 2,
                 p: 3,
@@ -560,8 +531,8 @@ function HomePage() {
             >
               <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.5 }}>
                 SJS Travels has transformed the way our employees commute. Their
-                punctuality and professionalism make daily office travel stress-free.
-                Truly a reliable partner!
+                punctuality and professionalism make daily office travel
+                stress-free. Truly a reliable partner!
               </Typography>
 
               <Stack direction="row" spacing={0.5} mb={1}>
@@ -584,7 +555,7 @@ function HomePage() {
             {/* Second Box */}
             <Box
               sx={{
-                flex: { xs: "1 1 100%", md: "0 0 500px" },
+                flex: { xs: "1 1 100%", md: "0 0 46%" },
                 backgroundColor: "#EFF5FF",
                 borderRadius: 2,
                 p: 3,
@@ -594,8 +565,8 @@ function HomePage() {
               }}
             >
               <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.5 }}>
-                The GPS tracking and verified drivers give us complete peace of mind.
-                Our employees feel safer and more comfortable than ever.
+                The GPS tracking and verified drivers give us complete peace of
+                mind. Our employees feel safer and more comfortable than ever.
               </Typography>
 
               <Stack direction="row" spacing={0.5} mb={1}>
@@ -618,13 +589,12 @@ function HomePage() {
         </Box>
       </Box>
 
-
       <Box
         sx={{
           width: {
-            md: "100%"
+            md: "85%",
           },
-          maxWidth: "1050px",       // max width on larger screens
+          // maxWidth: "1050px",
           height: "auto",
           borderRadius: "20px",
           backgroundColor: "#EFF5FF",
@@ -636,16 +606,15 @@ function HomePage() {
           mx: "auto",
           // alignItems: "center",
           // textAlign: "center",
-          alignContent: 'center',
+          alignContent: "center",
           alignItems: {
-            xs: "flex-start",   // right align for mobile
-            md: "center",     // center for desktop
+            xs: "flex-start", // right align for mobile
+            md: "center", // center for desktop
           },
           textAlign: {
-            xs: "left",      // text right in mobile
-            md: "center",     // text center in desktop
+            xs: "left", // text right in mobile
+            md: "center", // text center in desktop
           },
-
         }}
       >
         <Typography
@@ -653,21 +622,20 @@ function HomePage() {
           sx={{
             fontWeight: 600,
             lineHeight: 1.3,
-            fontSize: { xs: "1rem", md: "2rem" },
           }}
         >
           We’re Here to Help You Commute Smarter
         </Typography>
 
         <Typography
-          variant="body2"
+          variant="body1"
           sx={{
             lineHeight: 1.6,
             maxWidth: { xs: "100%", sm: "80%", md: "80%" },
-
           }}
         >
-          Tell us your requirements and our team will get back to you with the perfect commute plan.
+          Tell us your requirements and our team will get back to you with the
+          perfect commute plan.
         </Typography>
 
         <Box>
@@ -676,26 +644,8 @@ function HomePage() {
       </Box>
 
       <Footer />
-
     </>
-
   );
 }
 
 export default HomePage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
