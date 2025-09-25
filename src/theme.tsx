@@ -100,7 +100,7 @@ const theme = createTheme({
       fontSize: "12px",
       "@media (min-width:600px)": { fontSize: "14px" },
       "@media (min-width:900px)": { fontSize: "16px" },
-      "@media (min-width:1200px)": { fontSize: "20px" },
+      "@media (min-width:1200px)": { fontSize: "15px" },
       "@media (min-width:1536px)": { fontSize: "15px" },
     },
   },

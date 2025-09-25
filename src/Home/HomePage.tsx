@@ -425,7 +425,7 @@ function HomePage() {
               Home To Work
             </Typography>
             <Typography
-              variant="body1"
+              variant="body2"
               sx={{
                 // height: "100px",
                 // width: "480px",
@@ -576,12 +576,13 @@ function HomePage() {
                     icon="material-symbols-light:star"
                     width={24}
                     height={24}
-                    style={{ color: "#FFD209" }}
+                    style={{ color: "#FFD209",marginTop:20 }}
+                    
                   />
                 ))}
               </Stack>
 
-              <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
+              <Typography variant="subtitle2" sx={{ fontWeight: 600}}>
                 Innovatech Pvt. Ltd.
               </Typography>
             </Box>
